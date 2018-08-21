@@ -2,15 +2,15 @@ import os
 import shutil
 import glob
 import re
-fr = open('/home/tlmguest/Documents/Data/list_pair_all_subfolder.txt','r')
-d = {}
-al_lines = fr.readlines()
-for al_line in al_lines:
-    kv = al_line.split(' ')
-    kv[2] = kv[2].strip('\n').strip('\r')
-    d[kv[1]] = [kv[0],kv[2]]
+# fr = open('/home/tlmguest/Documents/Data/list_pair_all_subfolder.txt','r')
+# d = {}
+# al_lines = fr.readlines()
+# for al_line in al_lines:
+#     kv = al_line.split(' ')
+#     kv[2] = kv[2].strip('\n').strip('\r')
+#     d[kv[1]] = [kv[0],kv[2]]
 
-print (d)
+# print (d)
 
 
 abd = open('/home/tlmguest/Documents/Data/abd_mhd_flist.txt','w')
@@ -49,26 +49,47 @@ for s_line in single_lines:
             dst_dir = os.path.join(TRA_folder,s_cur[0])
             mkdirs(dst_dir)
             basename = os.path.basename(v_f)
+            basename_ =basename.replace('.mhd','')
+            new_basename_ = basename_.replace(' ','_')
             dst_f = os.path.join(dst_dir,basename.replace(' ','_'))
-
-            shutil.copy(v_f,dst_f)
+            v_fh =open(v_f,'r')
+            dst_fh = open(dst_f,'w')
+            fcontent = v_fh.read()
+            dst_content = fcontent.replace(basename_,new_basename_)
+            dst_fh.write(dst_content)
+            v_fh.close()
+            dst_fh.close()
             shutil.copy(v_f.replace('.mhd','.img'),dst_f.replace('.mhd','.img'))
         if re.search('sag',v_f,re.IGNORECASE):
             dst_dir = os.path.join(SAG_folder,s_cur[0])
             mkdirs(dst_dir)
             basename = os.path.basename(v_f)
+            basename_ =basename.replace('.mhd','')
+            new_basename_ = basename_.replace(' ','_')
             dst_f = os.path.join(dst_dir,basename.replace(' ','_'))
-
-            shutil.copy(v_f,dst_f)
-            shutil.copy(v_f.replace('.mhd','.img'),dst_f.replace('.mhd','.img'))           
+            v_fh =open(v_f,'r')
+            dst_fh = open(dst_f,'w')
+            fcontent = v_fh.read()
+            dst_content = fcontent.replace(basename_,new_basename_)
+            dst_fh.write(dst_content)
+            v_fh.close()
+            dst_fh.close()
+            shutil.copy(v_f.replace('.mhd','.img'),dst_f.replace('.mhd','.img'))    
         if re.search('cor',v_f,re.IGNORECASE):
             dst_dir = os.path.join(COR_folder,s_cur[0])
             mkdirs(dst_dir)
             basename = os.path.basename(v_f)
+            basename_ =basename.replace('.mhd','')
+            new_basename_ = basename_.replace(' ','_')
             dst_f = os.path.join(dst_dir,basename.replace(' ','_'))
-            shutil.copy(v_f,dst_f)
-            shutil.copy(v_f.replace('.mhd','.img'),dst_f.replace('.mhd','.img')) 
-
+            v_fh =open(v_f,'r')
+            dst_fh = open(dst_f,'w')
+            fcontent = v_fh.read()
+            dst_content = fcontent.replace(basename_,new_basename_)
+            dst_fh.write(dst_content)
+            v_fh.close()
+            dst_fh.close()
+            shutil.copy(v_f.replace('.mhd','.img'),dst_f.replace('.mhd','.img'))
 
 
 
