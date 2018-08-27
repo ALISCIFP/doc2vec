@@ -2,29 +2,19 @@ import os
 import shutil
 import glob
 import re
-# fr = open('/home/tlmguest/Documents/Data/list_pair_all_subfolder.txt','r')
-# d = {}
-# al_lines = fr.readlines()
-# for al_line in al_lines:
-#     kv = al_line.split(' ')
-#     kv[2] = kv[2].strip('\n').strip('\r')
-#     d[kv[1]] = [kv[0],kv[2]]
-
-# print (d)
 
 
-abd = open('/home/tlmguest/Documents/Data/abd_mhd_flist.txt','w')
-cor = open('/home/tlmguest/Documents/Data/cor_mhd_flist','w')
-sag = open('/home/tlmguest/Documents/Data/sag_mhd_flist','w')
+
+# abd = open('/home/tlmguest/Documents/Data/abd_mhd_flist.txt','w')
+# cor = open('/home/tlmguest/Documents/Data/cor_mhd_flist','w')
+# sag = open('/home/tlmguest/Documents/Data/sag_mhd_flist','w')
 
 
-single = open('/home/tlmguest/Documents/Data/singleScan_list.txt','r')
-multi= open('/home/tlmguest/Documents/Data/folders_with_multiple_scans.txt','r')
+single = open('/home/zack/Data/PrincetonReports/singleScan_list.txt','r')
 
-frm = open('/home/tlmguest/Documents/Data/list_pair_all_subfolder_multiple.txt','w')
-newFolder ='/home/tlmguest/data/Princeton/images'
-oldFolder1 = '/home/tlmguest/data/princeton_mhd'
-oldFolder2 ='/home/tlmguest/data/mhd_multi'
+newFolder ='/home/zack/Data/Princeton/images'
+oldFolder1 = '/home/zack/Data/princeton_mhd'
+oldFolder2 ='/home/zack/Data/mhd_multi'
 
 
 def mkdirs(directory):
@@ -97,9 +87,8 @@ for s_line in single_lines:
 
 
 
-fr.close()
-fru.close()
-frm.close()
 single.close()
-multi.close()
+# abd.close()
+# cor.close()
+# sag.close()
 
