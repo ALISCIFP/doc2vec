@@ -7,6 +7,7 @@ val_list = '/home/tlmguest/Documents/Data/val.txt'
 test_list = '/home/tlmguest/Documents/Data/test.txt'
 
 report_dir ='/home/tlmguest/Documents/Data/PrincetonMRReports'
+#/home/zack/Data/PrincetonReports/PrincetonMRReports
 
 def list2OneDoc(dir,list,outdoc):
     outf = open(os.path.join(dir,outdoc),'w')
