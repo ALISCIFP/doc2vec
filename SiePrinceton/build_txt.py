@@ -37,7 +37,7 @@ def list2OneDoc(dir,list,outdoc):
         # print('lines count',count)
         if count == 0:  print(fdname)
             '''
-            delete two in train :
+            delete two in train because of void:
             
             1406651423 2335494428060423.txt in line 405
             1902028535 5974164134543241.txt in line 36
