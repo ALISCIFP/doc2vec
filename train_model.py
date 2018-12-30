@@ -17,10 +17,10 @@ worker_count = 1 #number of parallel processes
 pretrained_emb = "toy_data/pretrained_word_embeddings.txt" #None if use without pretrained embeddings
 
 #input corpus
-train_corpus = "toy_data/train_docs.txt"
+train_corpus = "/home/perla/Data/Princeton/PrincetonMRReports/train_all_v2.txt"
 
 #output model
-saved_path = "toy_data/model.bin"
+saved_path = "/home/perla/Github/doc2vec/SiePrinceton/model.bin"
 
 #enable logging
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)

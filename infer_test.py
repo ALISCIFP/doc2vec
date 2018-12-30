@@ -3,9 +3,9 @@ import gensim.models as g
 import codecs
 
 #parameters
-model="toy_data/model.bin"
-test_docs="toy_data/test_docs.txt"
-output_file="toy_data/test_vectors.txt"
+model="/home/perla/Github/doc2vec/SiePrinceton/model.bin"
+test_docs="/home/perla/Data/Princeton/PrincetonMRReports/train_all_v2.txt"
+output_file="/home/perla/Data/Princeton/vector512/val_v2.txt"
 
 #inference hyper-parameters
 start_alpha=0.01
