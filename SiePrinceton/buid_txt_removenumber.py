@@ -10,20 +10,27 @@ def list2OneDocv2(txt,outdoc):
     lines = txt.readlines()
     for line in lines:
         for julia in line.split():
-            julia = julia.rstrip(';').rstrip('.')
-            if julia.find('CM') != -1 or julia.find('MMM') != -1:
-                if julia.find('XX') != -1:
-                    if julia.find('XX', julia.find('XX')+2 ) != -1:
-                        line = line.replace(julia, '**VOLUME**')
-                    else:
-                        line = line.replace(julia, '**AREA**')
-                else:
-                    line = line.replace(julia, '**LENGTH**')
-            
-            
+            julia = julia.rstrip('.').rstrip(';')
+
             if julia.find('/', julia.find('/')+2 ) != -1:
                 line = line.replace (julia, '**DATE**')
 
+            if julia.find('XX') != -1:
+                if julia.find('XX', julia.find('XX')+2 ) != -1:
+                    line = line.replace(julia, '**VOLUME**')
+                else:
+                    line = line.replace(julia, '**AREA**')
+        for julia in line.split():
+            julia = julia.rstrip('.').rstrip(';')
+            if julia.find('CM') != -1 or julia.find('MMM') != -1 or julia.find('1cm') != -1:
+                # if julia.find('XX') != -1:
+                #     if julia.find('XX', julia.find('XX')+2 ) != -1:
+                #         line = line.replace(julia, '**VOLUME**')
+                #     else:
+                #         line = line.replace(julia, '**AREA**')
+                # else:
+                    line = line.replace(julia, '**LENGTH**')
+            
         outf.write(line)
     # outf.wirtelines(lines)
     outf.close()
