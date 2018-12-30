@@ -15,17 +15,16 @@ def list2OneDocv2(txt,outdoc):
                 if julia.find('XX') != -1:
                     if julia.find('XX', julia.find('XX')+2 ) != -1:
                         line = line.replace(julia, '**VOLUME**')
-                        # print(line)
                     else:
                         line = line.replace(julia, '**AREA**')
-                        # print(julia)
                 else:
                     line = line.replace(julia, '**LENGTH**')
-                    # print(julia)
-            # print(line
-        # break
+            
+            
+            if julia.find('/', julia.find('/')+2 ) != -1:
+                line = line.replace (julia, '**DATE**')
+
         outf.write(line)
-        # how to fully replace julia ??
     # outf.wirtelines(lines)
     outf.close()
 
