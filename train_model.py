@@ -20,7 +20,7 @@ pretrained_emb = "toy_data/pretrained_word_embeddings.txt" #None if use without 
 train_corpus = "/home/perla/Data/Princeton/PrincetonMRReports/train_all_v2.txt"
 
 #output model
-saved_path = "/home/perla/Github/doc2vec/SiePrinceton/model.bin"
+saved_path = "/home/perla/Data/Princeton/PrincetonMRReports/model.bin"
 
 #enable logging
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
