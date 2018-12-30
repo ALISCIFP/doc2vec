@@ -4,12 +4,12 @@ import gensim.models as g
 import logging
 
 #doc2vec parameters
-vector_size = 300
+vector_size = 512
 window_size = 15
 min_count = 1
 sampling_threshold = 1e-5
 negative_size = 5
-train_epoch = 100
+train_epoch = 1000
 dm = 0 #0 = dbow; 1 = dmpv
 worker_count = 1 #number of parallel processes
 

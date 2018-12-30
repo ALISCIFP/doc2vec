@@ -34,7 +34,7 @@ def list2OneDoc(dir,list,outdoc):
                         romeo = romeo.replace('.',';')
                         romeos += romeo + ' '
                 romeos = romeos[:-1].rstrip(';')+ '. ' #delete space and the last simicolon ';'
-        romeos = romeos[1:].replace(' cm','CMCM').replace(' x ','XX').replace(' mm','MMMM')
+        romeos = romeos[1:].replace(' cm','CM').replace(' x ','XX').replace(' mm','MMM')
         outf.write(romeos+'\n') #drop the first '. '
         # print('lines count',count)
         if count == 0:  print(fdname)
