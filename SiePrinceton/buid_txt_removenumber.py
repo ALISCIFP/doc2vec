@@ -20,16 +20,18 @@ def list2OneDocv2(txt,outdoc):
                     line = line.replace(julia, '**VOLUME**')
                 else:
                     line = line.replace(julia, '**AREA**')
+
         for julia in line.split():
             julia = julia.rstrip('.').rstrip(';')
             if julia.find('CM') != -1or julia.find('MMM') != -1 or julia.find('1cm') != -1 or julia.find('16mm') != -1 or julia.find('8-mm') != -1 or julia.find('14mm') != -1:
+                print(julia)
                 # if julia.find('XX') != -1:
                 #     if julia.find('XX', julia.find('XX')+2 ) != -1:
                 #         line = line.replace(julia, '**VOLUME**')
                 #     else:
                 #         line = line.replace(julia, '**AREA**')
                 # else:
-                    line = line.replace(julia, '**LENGTH**')
+                line = line.replace(julia, '**LENGTH**', 1)
             
         outf.write(line)
     # outf.wirtelines(lines)
