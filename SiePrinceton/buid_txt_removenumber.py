@@ -10,7 +10,7 @@ def list2OneDocv2(txt,outdoc):
     lines = txt.readlines()
     for line in lines:
         for julia in line.split():
-            julia = julia.rstrip('.').rstrip(';')
+            julia = julia.rstrip('.').rstrip(';').rstrip(',')
 
             if julia.find('/', julia.find('/')+2 ) != -1:
                 line = line.replace (julia, '**DATE**')
@@ -22,9 +22,9 @@ def list2OneDocv2(txt,outdoc):
                     line = line.replace(julia, '**AREA**')
 
         for julia in line.split():
-            julia = julia.rstrip('.').rstrip(';')
+            julia = julia.rstrip('.').rstrip(';').rstrip(',')
             if julia.find('CM') != -1or julia.find('MMM') != -1 or julia.find('1cm') != -1 or julia.find('16mm') != -1 or julia.find('8-mm') != -1 or julia.find('14mm') != -1:
-                print(julia)
+                # print(julia)
                 # if julia.find('XX') != -1:
                 #     if julia.find('XX', julia.find('XX')+2 ) != -1:
                 #         line = line.replace(julia, '**VOLUME**')
