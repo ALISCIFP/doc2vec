@@ -1,10 +1,10 @@
 import os
-train_list ='/home/perla/Data/Princeton/list_TRA/train.txt'
-val_list = '/home/perla/Data/Princeton/list_TRA/val.txt'
-test_list = '/home/perla/Data/Princeton/list_TRA/test.txt'
+train_list ='/media/Hitachi/Data/Princeton/PrincetonMRReports/list_type/train_others.txt'
+val_list = '/media/Hitachi/Data/Princeton/PrincetonMRReports/list_type/val_others.txt'
+test_list = '/media/Hitachi/Data/Princeton/PrincetonMRReports/list_type/test_others.txt'
 
 report_dir ='/home/zack/Data/PrincetonReports/PrincetonMRReports'
-output_dir ='/home/perla/Data/Princeton/PrincetonMRReports'
+output_dir ='/home/perla/Data/Princeton/PrincetonMRReports/old'
 
 def list2OneDoc(dir,list,outdoc):
     outf = open(os.path.join(output_dir,outdoc),'w')
@@ -16,7 +16,11 @@ def list2OneDoc(dir,list,outdoc):
         f = open(os.path.join(dir+'/discrp2',fdname))
         romeos =' '
         count =0
-        for line in f.read().split('\n'):#'f.read()delete the \r automatically apply  # or f.readlines() not line ='\n' has other problems
+        txt = f.read()
+        txt = txt.replace('\n\n','\n').replace('Abdomen:','').replace('Pelvis:','').replace('\s\s','\s')
+        txt = txt.replace('\s\s','\s')
+        for line in txt.split('\n'):#'f.read()delete the \r automatically apply  # or f.readlines() not line ='\n' has other problems
+            
             if (line.find('Thank you') != -1
                     or line.find('PCW7') != -1
                     or line.find('communicated') !=-1 #results communicated by phone.
@@ -31,15 +35,16 @@ def list2OneDoc(dir,list,outdoc):
                         float(romeo)
                         romeos += romeo + ' '
                     except ValueError:
-                        romeo = romeo.replace('.',';')
+                        # romeo = romeo.replace('.','. ')
                         romeos += romeo + ' '
-                romeos = romeos[:-1].rstrip(';')+ '. ' #delete space and the last simicolon ';'
+                #romeos = romeos[:-1].rstrip('')+ '. ' #delete space and the last simicolon ';'
+                # romeos = romeos
         romeos = romeos[1:].replace(' cm','CM').replace(' x ','XX').replace(' mm','MMM')
         outf.write(romeos+'\n') #drop the first '. '
         # print('lines count',count)
         if count == 0:  print(fdname)
     outf.close()
 
-list2OneDoc(report_dir,train_list,'train_all.txt')
-list2OneDoc(report_dir,val_list,'val_all.txt')
-list2OneDoc(report_dir,test_list,'test_all.txt')
+list2OneDoc(report_dir,train_list,'train_others_pre.txt')
+list2OneDoc(report_dir,val_list,'val_others_pre.txt')
+list2OneDoc(report_dir,test_list,'test_others_pre.txt')
