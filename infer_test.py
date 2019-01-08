@@ -4,8 +4,8 @@ import codecs
 
 #parameters
 model="/home/perla/Data/Princeton/PrincetonMRReports/model.bin"
-test_docs="/home/perla/Data/Princeton/PrincetonMRReports/train_all_v2.txt"
-output_file="/home/perla/Data/Princeton/vector512/train512.txt"
+test_docs="/home/perla/Data/Princeton/PrincetonMRReports/test_all.txt"
+output_file="/home/perla/Data/Princeton/vector512/test512.txt"
 
 #inference hyper-parameters
 start_alpha=0.01
