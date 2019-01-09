@@ -35,7 +35,9 @@ def list2OneDocv2(txt,outdoc):
                     .replace('July 7, 2016','**DATE**').replace('February 2015','**DATE**').replace('April 26, 2016','**DATE**')\
                     .replace('September 14, 2015','**DATE**').replace('September 2012','**DATE**')\
                     .replace('2012','**DATE**').replace('2013','**DATE**').replace('2014','**DATE**')\
-                    .replace('2015','**DATE**').replace('2016','**DATE**').replace('2017','**DATE**')
+                    .replace('2015','**DATE**').replace('2016','**DATE**').replace('2017','**DATE**')\
+                    .replace('2006','**DATE**').replace('2008','**DATE**').replace('2010','**DATE**')\
+                    .replace('2007','**DATE**').replace('2009','**DATE**').replace('2011','**DATE**')
             
         outf.write(line)
     # outf.wirtelines(lines)

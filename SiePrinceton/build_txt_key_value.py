@@ -70,7 +70,9 @@ def list2OneDoc(dir,list,outdoc):
             .replace('August 2016','**DATE**').replace('October 2016','**DATE**').replace('May 31, 2016','**DATE**')\
             .replace('June 27, 2016','**DATE**').replace('March 2017','**DATE**')\
             .replace('2012','**DATE**').replace('2013','**DATE**').replace('2014','**DATE**')\
-            .replace('2015','**DATE**').replace('2016','**DATE**').replace('2017','**DATE**')
+            .replace('2015','**DATE**').replace('2016','**DATE**').replace('2017','**DATE**')\
+            .replace('2006','**DATE**').replace('2008','**DATE**').replace('2010','**DATE**')\
+            .replace('2007','**DATE**').replace('2009','**DATE**').replace('2011','**DATE**')
         outf.write(contents+'\n') #drop the first '. '
         # print('lines count',count)
         if count == 0:  print(fdname)
