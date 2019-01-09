@@ -31,15 +31,19 @@ def list2OneDocv2(txt,outdoc):
                 #     else:
                 #         line = line.replace(julia, '**AREA**')
                 # else:
-                line = line.replace(julia, '**LENGTH**', 1)
+                line = line.replace(julia, '**LENGTH**', 1).replace('February 22, 2016','**DATE**')\
+                    .replace('July 7, 2016','**DATE**').replace('February 2015','**DATE**').replace('April 26, 2016','**DATE**')\
+                    .replace('September 14, 2015','**DATE**').replace('September 2012','**DATE**')\
+                    .replace('2012','**DATE**').replace('2013','**DATE**').replace('2014','**DATE**')\
+                    .replace('2015','**DATE**').replace('2016','**DATE**').replace('2017','**DATE**')
             
         outf.write(line)
     # outf.wirtelines(lines)
     outf.close()
 
-list2OneDocv2(train_txt,'/home/perla/Data/Princeton/PrincetonMRReports/train_others_all.txt')
-list2OneDocv2(val_txt,'/home/perla/Data/Princeton/PrincetonMRReports/val_others_all.txt')
-list2OneDocv2(test_txt,'/home/perla/Data/Princeton/PrincetonMRReports/test_others_all.txt')
+list2OneDocv2(train_txt,'/home/perla/Data/Princeton/PrincetonMRReports/parts/train_others_all.txt')
+list2OneDocv2(val_txt,'/home/perla/Data/Princeton/PrincetonMRReports/parts/val_others_all.txt')
+list2OneDocv2(test_txt,'/home/perla/Data/Princeton/PrincetonMRReports/parts/test_others_all.txt')
 # for string in text.split():
 #             if re.match("^\d+?\.\d+?$", string): #is None:
 #                 print(string)

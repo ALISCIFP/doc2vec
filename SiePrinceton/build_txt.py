@@ -26,7 +26,9 @@ def list2OneDoc(dir,list,outdoc):
                     or line.find('communicated') !=-1 #results communicated by phone.
                     or line.find('I discussed') != -1
                     or line.find('was faxed to') != -1
-                    or line.find('appreciate your') != -1 ):
+                    or line.find('appreciate your') != -1
+                    or line.find('The results') != -1
+                    or line.find('PROTOCOL') !=-1 ):
                 break
             if not line =='':
                 count += 1
