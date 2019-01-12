@@ -37,11 +37,10 @@ def list2OneDoc(dir,list,outdoc):
                         float(romeo)
                         romeos += romeo + ' '
                     except ValueError:
-                        # romeo = romeo.replace('.','. ')
-                        romeos += romeo + ' '
-                #romeos = romeos[:-1].rstrip('')+ '. ' #delete space and the last simicolon ';'
-                # romeos = romeos
-        romeos = romeos[1:].replace(' cm','CM').replace(' x ','XX').replace(' mm','MMM')
+                        
+                        romeos += romeo.rstrip(' ') + ' '
+                romeos = romeos.strip().rstrip('.')+ '. ' #delete space and the last simicolon ';'
+        romeos = romeos[:].replace(' cm','CM').replace(' x ','XX').replace(' mm','MMM')
         outf.write(romeos+'\n') #drop the first '. '
         # print('lines count',count)
         if count == 0:  print(fdname)
